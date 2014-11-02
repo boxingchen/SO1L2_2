@@ -4,7 +4,6 @@
 #define _CRT_SECURE_NO_WARNINGS													// suppress warnings about unsafe scanf (C4996)
 #include <stdio.h>
 #include <stdlib.h>
-#include <math.h>
 
 #define ASCII_LF 10																// no magic numbers, right?
 
@@ -44,7 +43,7 @@ int main()
 					if((scanf("%hi %hi", &operand1, &operand2)) == 2)			// plus requires two operands. Get them from the user, check if both are entered correctly (return value from scanf should be 2)
 					{
 						res = operand1 + operand2;
-						printf("%hi + %hi results in %hi, in HEX %#x\n\n", operand1, operand2, res, res);
+						printf("%hi + %hi results in %hi, in HEX %#hx\n\n", operand1, operand2, res, res);
 					}
 					else
 					{
@@ -70,7 +69,7 @@ int main()
 					if((scanf("%hi", &operand1)) == 1)							// we ask the user to enter only one operand and therefore expect scanf to return 1
 					{
 						res = operand1+1;
-						printf("%hi++ results in %hi, in HEX %#x\n\n", operand1, res, res);
+						printf("%hi++ results in %hi, in HEX %#hx\n\n", operand1, res, res);
 					}
 					else														// if scanf didn't return 1, then the operand wasn't correctly read from the input
 					{
